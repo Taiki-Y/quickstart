@@ -22,9 +22,9 @@ class UserController extends Controller
     public function detail(User $user){
         $auth = Auth::user();
 
-        return view('user/detail',[
+        return view('user/detail'),[
             'auth' =>$auth
-        ]);
+        ];
  
     }
 

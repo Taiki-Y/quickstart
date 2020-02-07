@@ -17,16 +17,13 @@ class UserController extends Controller
          return view('user/show', [
             'tasks'=>$tasks
     ]);
-         }
 
     public function detail(User $user){
         $auth = Auth::user();
 
-        return view('user/detail',[
-            'auth' =>$auth
-        ]);
- 
+        return view('user/detail');
     }
+ 
 
     // // タスクの削除
     // public function destroy(Request $request, Task $task )

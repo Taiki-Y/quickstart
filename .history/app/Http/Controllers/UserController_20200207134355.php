@@ -24,7 +24,7 @@ class UserController extends Controller
 
         return view('user/detail',[
             'auth' =>$auth
-        ]);
+        ];
  
     }
 

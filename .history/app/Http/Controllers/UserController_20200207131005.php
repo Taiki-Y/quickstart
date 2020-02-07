@@ -20,11 +20,9 @@ class UserController extends Controller
          }
 
     public function detail(User $user){
-        $auth = Auth::user();
+        $user = Auth::user();
 
-        return view('user/detail',[
-            'auth' =>$auth
-        ]);
+        return view('user/detail');
  
     }
 

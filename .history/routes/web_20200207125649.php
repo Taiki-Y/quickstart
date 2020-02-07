@@ -33,7 +33,7 @@ Route::put('/task/{task}','TaskController@update');
 Route::get('/task/user/{user}','UserController@show');
 
 // ユーザー情報ページ
-Route::get('/user/{user}','UserController@detail');
+Route::get('/user/{user}');
 
 // // タスク削除
 // Route::delete('/task/{task}','UserController@destroy');
