@@ -3,7 +3,9 @@
   <div class="container">
     <div class="col-sm-offset-2 col-sm-12" style="margin: 0 20px">
       <div class="panel panel-default">
-
+        <div class="panel-heading">
+        New Task
+        </div>
         <div class="panel-body">
 
           <!-- TODO: Current Tasks -->
