@@ -3,11 +3,11 @@
   <div class="container">
     <div class="col-sm-offset-2 col-sm-12" style="margin: 0 20px">
       <div class="panel panel-default">
-      @if(Auth::check())
         <div class="panel-heading">
-        New Task
+        
         </div>
         <div class="panel-body">
+          @if(Auth::check())
           <!-- New Task Form -->
           <form action="{{ url('task')  }}" method="POST" class="form-horizontal">
           {{ csrf_field() }}
