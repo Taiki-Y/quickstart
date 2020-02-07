@@ -1,0 +1,25 @@
+/* タスク登録ページ */
+.error-message{
+  width: 600px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: #a94442;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+  background-color: #fff;
+}
+
+.status{
+  line-height: 50%;
+}
+
+button{
+  margin-top: 20px;
+}
+
+/* ユーザー情報ページ */
+.control-info{
+  padding-top: 7px;
+}
