@@ -29,16 +29,6 @@ class TaskController extends Controller
         //     'due' => 'required'
         // ]);
 
-    //     $user_id = Auth::id();
-    //     $this->validate($request,[
-    //      'name' => [
-    //          'required',
-    //          'max:255',
-    //          Rule::unique('tasks')
-    //         ],
-    //      'due' => 'required'
-    //  ]);
-
 
         $user_id = Auth::id();
            $this->validate($request,[

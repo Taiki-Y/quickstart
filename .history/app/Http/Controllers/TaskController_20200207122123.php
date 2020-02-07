@@ -46,7 +46,6 @@ class TaskController extends Controller
                 'required',
                 'max:255',
                 Rule::unique('tasks')->where(function ($query) use ($user_id) {
-                return $query->where('user_id', $user_id);
             })],
             'due' => 'required'
         ]);

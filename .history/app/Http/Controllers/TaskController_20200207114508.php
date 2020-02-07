@@ -6,7 +6,6 @@ use App\Task;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 
 class TaskController extends Controller
 {
@@ -29,25 +28,8 @@ class TaskController extends Controller
         //     'due' => 'required'
         // ]);
 
-    //     $user_id = Auth::id();
-    //     $this->validate($request,[
-    //      'name' => [
-    //          'required',
-    //          'max:255',
-    //          Rule::unique('tasks')
-    //         ],
-    //      'due' => 'required'
-    //  ]);
-
-
-        $user_id = Auth::id();
-           $this->validate($request,[
-            'name' => [
-                'required',
-                'max:255',
-                Rule::unique('tasks')->where(function ($query) use ($user_id) {
-                return $query->where('user_id', $user_id);
-            })],
+        $this->validate($request,[
+            'name' => 'required|max:255'
             'due' => 'required'
         ]);
         
