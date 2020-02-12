@@ -14,7 +14,7 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
-        $tasks = Task::orderBy('created_at', 'asc')->get();
+        $tasks = Task::orderBy('due', 'asc')->get();
 
         return view('tasks', [
         'tasks'=>$tasks
@@ -68,6 +68,7 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+
 
     //タスクの編集
     public function edit(Request $request, Task $task){

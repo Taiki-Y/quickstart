@@ -40,14 +40,13 @@ Route::get('/user/{user}/edit','UserController@edit');
 
 Route::put('/user/{user}','UserController@update');
 
-// // タスク削除
-// Route::delete('/task/{task}','UserController@destroy');
+//ユーザー名変更
+Route::get('/user/{user_id}/username/edit','UserController@editname');
+Route::put('/user/{user_id}/username/edit','UserController@updatename');
 
-// //タスクの編集
-// Route::get('/user/{user}/task/{task}/edit','UserController@edit');
-
-// // タスクの更新
-// Route::put('/user/{user}/task/{task}','UserController@update');
+//メールアドレス変更
+Route::get('/user/{user_id}/mailaddress/edit','UserController@editmailaddress');
+Route::put('/user/{user_id}/mailaddress/edit','UserController@updatemailaddress');
 
 
 

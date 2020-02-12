@@ -9,14 +9,13 @@
         </div>
         <div class="panel-body">
           <!-- New Task Form -->
-          <form action="{{ url('task')  }}" method="POST" class="form-horizontal">
-          {{ csrf_field() }}
             <!-- ユーザー名  -->
             <div class="form-group">
               <label class="col-sm-3 control-label">ユーザー名</label>
               <div class="col-sm-6 control-info">
                 <span>{{$auth->name}}</span>
               </div>
+              <a href="/user/{{Auth::user()->id}}/username/edit" class="btn btn-default">編集</a>
             </div>
             <!-- メールアドレス -->
             <div class="form-group">
@@ -24,16 +23,8 @@
               <div class="col-sm-6 control-info">
                 <span>{{$auth->email}}</span>
               </div> 
+              <a href="/user/{{Auth::user()->id}}/mailaddress/edit" class="btn btn-default">編集</a>
             </div>
-                <!-- Add Task Button -->
-                <div class="form-group">
-                  <div class="col-sm-offset-3 col-sm-6">
-                  <button type="button" onclick="location.href='/user/{{Auth::user()->id}}/edit'" class="btn btn-default">
-                    変更
-                  </button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
           @else

@@ -49,32 +49,41 @@ class UserController extends Controller
         return redirect('user/'.$auth->id.'/edit');
     }
 
-  
- 
+    public function editname(Request $request, User $user){
+        $auth = Auth::user();
+
+        return view('user/editname',[
+            'auth'=> $auth
+        ]);
+    }
+
+    public function updatename(Request $request, Auth $auth){
+        $auth = Auth::user();
+        $auth->name = $request->name;
+        $auth->save();
+
+        return view('user/detail',[
+            'auth' => $auth
+        ]);
+    }
     
 
-    // // タスクの削除
-    // public function destroy(Request $request, Task $task )
-    // {
-    //     $task->delete();
+    public function editmailaddress(Request $request, User $user){
+        $auth = Auth::user();
 
-    //     return view('user/show');
-    // }
+        return view('user/editmailaddress',[
+            'auth'=> $auth
+        ]);
+    }
 
-    // //タスクの編集
-    // public function edit(Request $request, Task $task){
+    public function updatemailaddress(Request $request, Auth $auth){
+        $auth = Auth::user();
+        $auth->email = $request->email;
+        $auth->save();
 
-    //     return view('user/edit', [
-    //         'task'=>$task
-    //     ]);
-    // }
+        return view('user/detail',[
+            'auth' => $auth
+        ]);
+    }
 
-    // public function update(Request $request, Task $task){
-    //     $task->name = $request->name;
-    //     $task->due = $request->due;
-    //     $task->status = $request->status;
-    //     $task->save();
-    //     return redirect('/tasks');
-    // }
-    
 }
