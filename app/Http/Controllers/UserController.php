@@ -68,5 +68,17 @@ class UserController extends Controller
             'auth' => $auth
         ]);
     }
+    
+
+    public function editmailaddress(Request $request, User $user){
+        $auth = Auth::user();
+
+        return view('user/editmailaddress',[
+            'auth'=> $auth
+        ]);
+    }
+
+
+
 
 }

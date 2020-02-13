@@ -60,8 +60,6 @@ class ChangeaddressController extends Controller
             ->where('token', '=', $token)
             ->delete();
 
-            return view('user/detail',[
-                'auth' => $user
-            ]);
+            return view('emails/confirmaddress');
     }
 }
