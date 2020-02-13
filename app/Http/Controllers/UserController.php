@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Task;
 use App\User;
+use App\Newemail;
+use Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,25 +62,6 @@ class UserController extends Controller
     public function updatename(Request $request, Auth $auth){
         $auth = Auth::user();
         $auth->name = $request->name;
-        $auth->save();
-
-        return view('user/detail',[
-            'auth' => $auth
-        ]);
-    }
-    
-
-    public function editmailaddress(Request $request, User $user){
-        $auth = Auth::user();
-
-        return view('user/editmailaddress',[
-            'auth'=> $auth
-        ]);
-    }
-
-    public function updatemailaddress(Request $request, Auth $auth){
-        $auth = Auth::user();
-        $auth->email = $request->email;
         $auth->save();
 
         return view('user/detail',[

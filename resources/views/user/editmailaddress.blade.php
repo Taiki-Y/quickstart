@@ -7,14 +7,13 @@
         {{$auth->name}}
         </div>
         <div class="panel-body">
-          <form action="{{ url('/user/'.$auth->id.'/mailaddress/edit') }}" method="POST" class="form-horizontal">
+          <form action="{{ url('/user/'.$auth->id.'/mailaddress/preupdate') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
-            {{ method_field('PUT')}}
             <!-- メールアドレス -->
             <div class="form-group">
             <label for="email" class="col-sm-3 control-label">新しいメールアドレス</label>
               <div class="col-sm-6 control-info">
-                <input type="text" name="email" id="email" class="form-control" value="{{ $auth->email }}">
+                <input type="text" name="new_email" id="email" class="form-control" value="{{ $auth->email }}">
               </div> 
             </div>
             @if($errors->has('email'))

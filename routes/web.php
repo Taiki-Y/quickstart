@@ -14,7 +14,7 @@
 use App\Task;
 use Illuminate\Http\Request;
 
-// タスク一覧
+// タスク一覧ß
 Route::get('/tasks', 'TaskController@index');
 
 // タスクの保存
@@ -48,9 +48,19 @@ Route::put('/user/{user_id}/username/edit','UserController@updatename');
 Route::get('/user/{user_id}/mailaddress/edit','UserController@editmailaddress');
 Route::put('/user/{user_id}/mailaddress/edit','UserController@updatemailaddress');
 
+//メールアドレス仮変更
+Route::post('/user/{user_id}/mailaddress/preupdate','ChangeaddressController@preupdate');
+Route::get('/settings/authorizeMail/{token?}','ChangeaddressController@authorizeMail');
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
+  return view('welcome');
+});
+
+
 
