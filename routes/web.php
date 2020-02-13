@@ -29,6 +29,9 @@ Route::get('/task/{task}/edit','TaskController@edit');
 // タスクの更新
 Route::put('/task/{task}','TaskController@update');
 
+//タスク絞り込み
+Route::get('/task/filter/{status}','TaskController@filter');
+
 // マイページ表示
 Route::get('/task/user/{user}','UserController@show');
 
@@ -52,6 +55,9 @@ Route::put('/user/{user_id}/mailaddress/edit','UserController@updatemailaddress'
 Route::post('/user/{user_id}/mailaddress/preupdate','ChangeaddressController@preupdate');
 Route::get('/settings/authorizeMail/{token?}','ChangeaddressController@authorizeMail');
 
+//パスワード変更
+Route::get('/user/{user_id}/password/reset','UserController@showresetform');
+Route::post('/user/{user_id}/password/reset','UserController@resetpassword');
 
 
 Auth::routes();

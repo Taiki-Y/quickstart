@@ -25,8 +25,16 @@
               </div> 
               <a href="/user/{{Auth::user()->id}}/mailaddress/edit" class="btn btn-default">編集</a>
             </div>
+            <!-- ユーザー名  -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label">パスワード</label>
+              <div class="col-sm-6 control-info">
+                <span>****************</span>
+              </div>
+              <a href="/user/{{Auth::user()->id}}/password/reset" class="btn btn-default">編集</a>
             </div>
-          </div>
+            </div>
+        </div>
           @else
           <div></div>
           @endif

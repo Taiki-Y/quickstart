@@ -64,6 +64,16 @@
           <div class="panel panel-default">
           <div class="panel-heading">
           現在のタスク
+          <form action="{{ url('task/filter/{$task->status}') }}" method="POST" style="display: inline-block; margin-left: 20px;">
+            <!-- <select name="status">
+              <option value="status1">未着手</option>
+              <option value="status2">進行中</option>
+              <option value="status3">完了</option>
+            </select>
+            <button type="submit" >
+              絞り込み
+            </button> -->
+          </form>
           </div>
               <div class="panel-body">
                 <table class="table table-striped task-table">
