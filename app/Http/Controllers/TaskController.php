@@ -14,10 +14,10 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
-        $tasks = Task::orderBy('due', 'asc')->get();
+        $tasks = Task::orderBy('due', 'asc')->paginate(10);
 
         return view('tasks', [
-        'tasks'=>$tasks
+        'tasks'=>$tasks,
     ]);
     }
 

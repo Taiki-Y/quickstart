@@ -137,5 +137,8 @@
             </div>
           @endif
         </div>
+        <div class="d-flex justify-content-center text-center">
+          {{ $tasks->links() }}
+        </div>
       </div>
     @endsection
