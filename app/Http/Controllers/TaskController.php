@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -93,6 +94,26 @@ class TaskController extends Controller
         $task->status = $request->status;
         $task->save();
         return redirect('/tasks');
+    }
+
+    // タスクの検索
+    public function search(Request $request){
+        $keyword = $request->input('keyword');
+
+
+        if(!empty($keyword)){
+            $hittasks = Task::orderBy('due', 'asc')
+                    ->where('name', 'like', '%'.$keyword.'%')
+                    ->paginate(5);
+        }else{
+            echo "";
+        }
+
+        return view('searchresult',[
+            'hittasks' =>$hittasks,
+            'keyword' => $keyword
+        ]);
+
     }
 
     

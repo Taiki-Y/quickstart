@@ -14,7 +14,7 @@
 use App\Task;
 use Illuminate\Http\Request;
 
-// タスク一覧ß
+// タスク一覧
 Route::get('/tasks', 'TaskController@index');
 
 // タスクの保存
@@ -58,6 +58,9 @@ Route::get('/settings/authorizeMail/{token?}','ChangeaddressController@authorize
 //パスワード変更
 Route::get('/user/{user_id}/password/reset','UserController@showresetform');
 Route::post('/user/{user_id}/password/reset','UserController@resetpassword');
+
+// タスク検索機能
+Route::get('/task/search', 'TaskController@search');
 
 
 Auth::routes();

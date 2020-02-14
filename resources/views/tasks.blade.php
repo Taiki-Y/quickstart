@@ -64,15 +64,11 @@
           <div class="panel panel-default">
           <div class="panel-heading">
           現在のタスク
-          <form action="{{ url('task/filter/{$task->status}') }}" method="POST" style="display: inline-block; margin-left: 20px;">
-            <!-- <select name="status">
-              <option value="status1">未着手</option>
-              <option value="status2">進行中</option>
-              <option value="status3">完了</option>
-            </select>
-            <button type="submit" >
-              絞り込み
-            </button> -->
+          <form class="form-inline" action="{{ url('/task/search')  }}">
+            <div class="form-group">
+              <input type="text" name="keyword">
+              <input type="submit" value="検索" >
+            </div>
           </form>
           </div>
               <div class="panel-body">
