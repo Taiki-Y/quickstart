@@ -60,14 +60,14 @@
           <div></div>
           @endif
           <!-- TODO: Current Tasks -->
-          @if(count($tasks) > 0)
+          @if(count($tasks) > 0) 
           <div class="panel panel-default">
           <div class="panel-heading">
           現在のタスク
           <form class="form-inline" action="{{ url('/task/search')  }}">
             <div class="form-group">
-              <input type="text" name="keyword"　class="form-control" placeholder="キーワードを入力">
-              <input type="submit" class="btn btn-default" value="検索" >
+              <input type="text" name="keyword"　class="form-control">
+              <input type="submit" class="btn btn-default" value="検索" placeholder="キーワードを入力">
             </div>
           </form>
           </div>

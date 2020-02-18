@@ -28,3 +28,8 @@ button{
 .control-info{
   padding-top: 7px;
 }
+
+.form-inline{
+  display: inline-block;
+  margin-left: 50px;
+}

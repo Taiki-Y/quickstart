@@ -16,9 +16,11 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $tasks = Task::orderBy('due', 'asc')->paginate(10);
+        $users = User::get();
 
         return view('tasks', [
         'tasks'=>$tasks,
+        'users'=>$users
     ]);
     }
 
@@ -114,6 +116,14 @@ class TaskController extends Controller
             'keyword' => $keyword
         ]);
 
+    }
+
+    public function mytasks(Auth $auth, Task $task){
+        $auth = Auth::id();
+        $mytasks = Task::where('user_id',$auth)->orderBy('due', 'asc')->paginate(2);
+        return view('mytasks',[
+            'tasks'=>$mytasks,
+    ]);
     }
 
     

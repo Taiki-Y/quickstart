@@ -71,6 +71,9 @@
                                     <li>
                                     <a href="/user/{{Auth::user()->id}}">マイページ</a>
                                     </li>
+                                    <li>
+                                    <a href="/tasks/user/{{Auth::user()->id}}">マイタスク</a>
+                                    </li>
                                 </ul>
                             </li>
                         @endguest

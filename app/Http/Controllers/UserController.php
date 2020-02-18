@@ -113,4 +113,5 @@ class UserController extends Controller
         return redirect()->back()->with('change_password_success', 'パスワードを変更しました。');
     }
 
+
 }

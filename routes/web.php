@@ -62,6 +62,9 @@ Route::post('/user/{user_id}/password/reset','UserController@resetpassword');
 // タスク検索機能
 Route::get('/task/search', 'TaskController@search');
 
+// 自分のタスクのみ表示
+Route::get('/tasks/user/{user_id}','TaskController@mytasks');
+
 
 Auth::routes();
 
