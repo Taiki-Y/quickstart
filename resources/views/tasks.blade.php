@@ -39,10 +39,16 @@
             <div class="form-group status">
               <label for="status" class="col-sm-3 control-label">ステータス</label>
               <div class="col-sm-6">
-                <select name="status" id="status">
-                  <option value="未着手">未着手</option>
-                  <option value="進行中">進行中</option>
-                </select>
+              <select name="status" id="status" class="form-control">
+  @foreach(\App\Task::STATUS as $key => $val)
+    <option
+        value="{{ $key }}"
+        
+    >
+      {{ $val['label'] }}
+    </option>
+  @endforeach
+</select>
               </div>
             </div>
                 <!-- Add Task Button -->
@@ -100,7 +106,7 @@
                     </td>
                     <!-- 状態 -->
                     <td class="table-text">
-                      <div>{{ $task->status }}</div>
+                      <div>{{ $task->status_label }}</div>
                     </td>
                     <td>
                       @if(Auth::id() === $task->user_id)
