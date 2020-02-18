@@ -40,15 +40,9 @@
               <label for="status" class="col-sm-3 control-label">ステータス</label>
               <div class="col-sm-6">
               <select name="status" id="status" class="form-control">
-  @foreach(\App\Task::STATUS as $key => $val)
-    <option
-        value="{{ $key }}"
-        
-    >
-      {{ $val['label'] }}
-    </option>
-  @endforeach
-</select>
+                <option value="1" >未着手</option>
+                <option value="2">着手中</option>
+              </select>
               </div>
             </div>
                 <!-- Add Task Button -->
@@ -73,7 +67,7 @@
           <form class="form-inline" action="{{ url('/task/search')  }}">
             <div class="form-group">
               <input type="text" name="keyword">
-              <input type="submit" value="検索" >
+              <input type="submit" class="btn btn-default" value="検索" >
             </div>
           </form>
           </div>

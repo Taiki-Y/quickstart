@@ -27,7 +27,7 @@
             <div class="form-group">
               <label for="due" class="col-sm-3 control-label">期限<span class="must">*</span></label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" name="due" id="due" value="{{ old('due') }}" />
+                <input type="text" class="form-control" name="due" id="due" value="{{ $task->due }}" />
               </div>
             </div>
             @if($errors->has('due'))
@@ -39,10 +39,12 @@
             <div class="form-group status">
               <label for="status" class="col-sm-3 control-label">ステータス</label>
               <div class="col-sm-6">
-                <select name="status" id="status">
-                  <option value="未着手">未着手</option>
-                  <option value="進行中">進行中</option>
-                  <option value="完了">完了</option>
+                <select name="status" id="status" class="form-control">
+                @foreach(\App\Task::STATUS as $key => $val)
+                  <option value="{{ $key }}" {{ $key == old('status', $task->status) ? 'selected' : '' }}>
+                    {{ $val['label'] }}
+                  </option>
+                @endforeach
                 </select>
               </div>
             </div>
