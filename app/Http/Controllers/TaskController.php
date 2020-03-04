@@ -15,12 +15,12 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
+        $now = date('Y-m-d H:i:s');
         $tasks = Task::orderBy('due', 'asc')->paginate(10);
-        $users = User::get();
 
         return view('tasks', [
         'tasks'=>$tasks,
-        'users'=>$users
+        'now'=>$now
     ]);
     }
 
@@ -118,6 +118,7 @@ class TaskController extends Controller
 
     }
 
+    // マイタスク
     public function mytasks(Auth $auth, Task $task){
         $auth = Auth::id();
         $mytasks = Task::where('user_id',$auth)->orderBy('due', 'asc')->paginate(2);

@@ -65,6 +65,7 @@ Route::get('/task/search', 'TaskController@search');
 // 自分のタスクのみ表示
 Route::get('/tasks/user/{user_id}','TaskController@mytasks');
 
+Route::get('/tasks/sort/username', 'TaskController@usernamesort');
 
 Auth::routes();
 

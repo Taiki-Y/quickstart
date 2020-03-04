@@ -4,3 +4,4 @@ function delete_alert(event){
   }
   document.deleteform.submit();
 };
+

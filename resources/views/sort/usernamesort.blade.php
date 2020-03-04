@@ -4,7 +4,7 @@
     <div class="col-sm-offset-2 col-sm-12" style="margin: 0 20px">
       <div class="panel panel-default">
       @if(Auth::check())
-        <div id="title" class="panel-heading">
+        <div class="panel-heading">
         New Task
         </div>
         <div class="panel-body">
@@ -66,24 +66,24 @@
           現在のタスク
           <form class="form-inline" action="{{ url('/task/search')  }}">
             <div class="form-group">
-              <input type="text" name="keyword" placeholder="キーワードを入力">
+              <input type="text" name="keyword"　class="form-control" placeholder="キーワードを入力">
               <input type="submit" class="btn btn-default" value="検索" >
             </div>
           </form>
           </div>
               <div class="panel-body">
-                <table class="table table-striped task-table tablesorter" id="myTable">
+                <table class="table table-striped task-table">
                 <!-- テーブルヘッダ --> 
                   <thead>
                     <th>ユーザー名</th>
                     <th>タスク名</th>
-                    <th class="submit_button">期限</th>
+                    <th>期限</th>
                     <th>ステータス</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                   </thead>
                   <!-- テーブル本体 --> 
-                  <tbody>
+                  <tbody　 id="sort">
                     @foreach ($tasks as $task)
                       <tr>
                     <!-- 投稿者名 -->
@@ -96,12 +96,7 @@
                     </td>
                     <!-- 期限 -->
                     <td class="table-text">
-                      @if($task->due< $now && $task->status!==3  )
-                        <div>{{ $task->due }}</div>
-                        <span style="color: red;">タスクの期限が過ぎています</span>
-                      @else
-                        <div>{{ $task->due }}</div>
-                      @endif
+                      <div>{{ $task->due }}</div>
                     </td>
                     <!-- 状態 -->
                     <td class="table-text">

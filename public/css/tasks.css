@@ -33,3 +33,13 @@ button{
   display: inline-block;
   margin-left: 50px;
 }
+
+#myTable .tablesorter-header {
+  cursor: pointer;
+  outline: none;
+}
+#myTable .tablesorter-header-inner::after { 
+  content: '▼';
+  font-size: 12px;
+  margin-left: 5px;
+}
