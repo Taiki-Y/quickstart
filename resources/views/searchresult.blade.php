@@ -6,10 +6,10 @@
   <h4>"{{$keyword}}"を含むタスク</h4>
   <!-- テーブルヘッダ --> 
     <thead>
-      <th>ユーザー名</th>
-      <th>タスク名</th>
-      <th>期限</th>
-      <th>ステータス</th>
+      <th><a href="/tasks?sort=user_id">ユーザー名</a></th>
+      <th><a href="/tasks?sort=name">タスク名</a></th>
+      <th><a href="/tasks?sort=due">期限</a></th>
+      <th><a href="/tasks?sort=status">ステータス</a></th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </thead>
@@ -31,7 +31,7 @@
       </td>
       <!-- 状態 -->
       <td class="table-text">
-        <div>{{ $task->status }}</div>
+        <div>{{\App\Enums\TaskState::getDescription($task->status)}}</div>
       </td>
       <td>
         @if(Auth::id() === $task->user_id)

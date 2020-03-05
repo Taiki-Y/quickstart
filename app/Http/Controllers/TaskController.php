@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
+use App\Enums\PublishStateType;
 
 class TaskController extends Controller
 {
@@ -15,12 +16,17 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
+        $sort = $request->sort;
+        if (is_null($sort)) {
+            $sort = 'id';
+           }
         $now = date('Y-m-d H:i:s');
-        $tasks = Task::orderBy('due', 'asc')->paginate(10);
+        $tasks = Task::orderBy($sort,'asc')->paginate(10);
 
         return view('tasks', [
         'tasks'=>$tasks,
-        'now'=>$now
+        'now'=>$now,
+        'sort'=>$sort
     ]);
     }
 

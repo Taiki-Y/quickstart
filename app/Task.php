@@ -12,11 +12,11 @@ class Task extends Model
         return $this->belongsTo('App\User');
     }
 
-    const STATUS = [
-        1 => [ 'label' => '未着手' ],
-        2 => [ 'label' => '着手中' ],
-        3 => [ 'label' => '完了' ],
-    ];
+    // const STATUS = [
+    //     1 => [ 'label' => '未着手' ],
+    //     2 => [ 'label' => '着手中' ],
+    //     3 => [ 'label' => '完了' ],
+    // ];
 
     public function getStatusLabelAttribute()
     {

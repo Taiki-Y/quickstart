@@ -1,5 +1,5 @@
 $(document).ready(function() 
     { 
-        $("#myTable").tablesorter(); 
+        $("#sort_table").tablesorter(); 
     } 
 );

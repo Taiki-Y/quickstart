@@ -100,7 +100,7 @@
                     </td>
                     <!-- 状態 -->
                     <td class="table-text">
-                      <div>{{ $task->status_label }}</div>
+                      <div>{{\App\Enums\TaskState::getDescription($task->status)}}</div>
                     </td>
                     <td>
                       @if(Auth::id() === $task->user_id)

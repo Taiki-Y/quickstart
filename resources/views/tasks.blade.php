@@ -72,13 +72,13 @@
           </form>
           </div>
               <div class="panel-body">
-                <table class="table table-striped task-table tablesorter" id="myTable">
+                <table id="sort_table" class="table table-striped task-table tablesorter">
                 <!-- テーブルヘッダ --> 
                   <thead>
-                    <th>ユーザー名</th>
-                    <th>タスク名</th>
-                    <th class="submit_button">期限</th>
-                    <th>ステータス</th>
+                    <th><a href="/tasks?sort=user_id">ユーザー名</a></th>
+                    <th><a href="/tasks?sort=name">タスク名</a></th>
+                    <th><a href="/tasks?sort=due">期限</a></th>
+                    <th><a href="/tasks?sort=status">ステータス</a></th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                   </thead>
@@ -105,7 +105,7 @@
                     </td>
                     <!-- 状態 -->
                     <td class="table-text">
-                      <div>{{ $task->status_label }}</div>
+                      <div>{{\App\Enums\TaskState::getDescription($task->status)}}</div>
                     </td>
                     <td>
                       @if(Auth::id() === $task->user_id)
@@ -139,7 +139,7 @@
           @endif
         </div>
         <div class="d-flex justify-content-center text-center">
-          {{ $tasks->links() }}
+          {{ $tasks->appends(['sort' => $sort])->links() }}
         </div>
       </div>
     @endsection
