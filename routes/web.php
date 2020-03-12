@@ -67,9 +67,6 @@ Route::get('/tasks/user/{user_id}','TaskController@mytasks');
 
 Route::get('/tasks/sort/username','TaskController@sortusername');
 
-// ajax
-Route::get('/tasks/like','TaskController@like');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

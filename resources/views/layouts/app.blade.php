@@ -88,7 +88,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('/js/tasks.js') }}"></script>
-    <script src="{{ asset('/js/like.js') }}"></script>
+    <script src="{{ asset('/js/tablesorter.js') }}"></script>
     <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
     <script>

@@ -108,14 +108,6 @@
                       <div>{{\App\Enums\TaskState::getDescription($task->status)}}</div>
                     </td>
                     <td>
-                    <form action="{{ url('/tasks/like/') }}" method="GET">
-                        {{ csrf_field() }}
-                        <button class="good-button" type="button" class="btn">
-                          いいね
-                        </button>
-                      </form>
-                    </td>
-                    <td>
                       @if(Auth::id() === $task->user_id)
                     <!-- TODO: 削除ボタン -->
                     <form action="{{ url('task/'.$task->id) }}" method="POST">
