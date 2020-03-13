@@ -34,7 +34,12 @@ button{
   margin-left: 50px;
 }
 
-.clicked{
-  background-color: #808080;
-  color: #fff;
+#myTable .tablesorter-header {
+  cursor: pointer;
+  outline: none;
+}
+#myTable .tablesorter-header-inner::after { 
+  content: '▼';
+  font-size: 12px;
+  margin-left: 5px;
 }

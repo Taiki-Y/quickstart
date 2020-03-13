@@ -12,11 +12,6 @@ class Task extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function like()
-    {
-        return $this->hasMany('App\Like');
-    }
-
     // const STATUS = [
     //     1 => [ 'label' => '未着手' ],
     //     2 => [ 'label' => '着手中' ],

@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Task;
-use App\Like;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use App\Enums\PublishStateType;
-use Response;
 
 class TaskController extends Controller
 {
@@ -133,20 +131,6 @@ class TaskController extends Controller
         return view('mytasks',[
             'tasks'=>$mytasks,
     ]);
-    }
-
-    public function like(Request $request,Task $task){
-        $like = new Like;
-        $like->user_id = Auth::id();
-
-        $like->save();
-    
-    
-
-        $response = array();
-        $response["status"] = "OK";
-        $response["message"] = $task->id;
-        return Response::json($response);
     }
 
     
